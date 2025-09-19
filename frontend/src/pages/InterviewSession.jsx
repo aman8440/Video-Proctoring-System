@@ -19,7 +19,7 @@ const InterviewSession = () => {
 
   const loadSession = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}`);
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/sessions/${sessionId}`);
       const data = await response.json();
       
       if (data.success) {

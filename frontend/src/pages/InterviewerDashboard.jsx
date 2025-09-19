@@ -32,7 +32,7 @@ const InterviewerDashboard = () => {
 
   const loadSession = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}`);
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/sessions/${sessionId}`);
       const data = await response.json();
       
       if (data.success) {
@@ -155,7 +155,7 @@ const InterviewerDashboard = () => {
 
   const endSession = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}/end`, {
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/sessions/${sessionId}/end`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
