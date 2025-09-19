@@ -38,7 +38,7 @@ const CandidateView = () => {
 
   const initializeSession = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}`);
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/sessions/${sessionId}`);
       const data = await response.json();
       
       if (data.success) {
@@ -126,7 +126,7 @@ const CandidateView = () => {
 
     // Send violation to backend
     try {
-      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}/events`, {
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/sessions/${sessionId}/events`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ const CandidateView = () => {
 
   const endSession = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}/end`, {
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/sessions/${sessionId}/end`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

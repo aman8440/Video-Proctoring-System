@@ -19,7 +19,7 @@ const Reports = () => {
 
   const loadSessions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/sessions');
+      const response = await fetch('https://video-proctoring-system-52ph.onrender.com/api/sessions');
       const data = await response.json();
       
       if (data.success) {
@@ -38,7 +38,7 @@ const Reports = () => {
   const generateDetailedReport = async (sessionId) => {
     setIsGeneratingReport(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/reports/${sessionId}`);
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/reports/${sessionId}`);
       const data = await response.json();
       
       if (data.success) {
@@ -57,7 +57,7 @@ const Reports = () => {
 
   const downloadCSVReport = async (sessionId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/reports/${sessionId}/csv`);
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/reports/${sessionId}/csv`);
       const csvData = await response.text();
       
       const blob = new Blob([csvData], { type: 'text/csv' });

@@ -22,7 +22,7 @@ const Analytics = () => {
       const startDate = new Date();
       startDate.setDate(startDate.getDate() - parseInt(dateRange));
 
-      const response = await fetch(`http://localhost:5000/api/reports/analytics/summary?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`);
+      const response = await fetch(`https://video-proctoring-system-52ph.onrender.com/api/reports/analytics/summary?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`);
       const data = await response.json();
       
       if (data.success) {
@@ -40,7 +40,7 @@ const Analytics = () => {
 
   const loadSessions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/sessions?limit=50');
+      const response = await fetch('https://video-proctoring-system-52ph.onrender.com/api/sessions?limit=50');
       const data = await response.json();
       
       if (data.success) {

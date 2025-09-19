@@ -23,7 +23,7 @@ const Home = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/sessions/create', {
+      const response = await fetch('https://video-proctoring-system-52ph.onrender.com/api/sessions/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
