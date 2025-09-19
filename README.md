@@ -116,8 +116,8 @@ npm start
 ```
 
 The application will be available at:
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
+- **Frontend**: https://video-proctoring-system-one.vercel.app
+- **Backend API**: https://video-proctoring-system-52ph.onrender.com
 - **MongoDB**: mongodb://localhost:27017
 
 ## 🎯 Usage Guide
