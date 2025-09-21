@@ -62,9 +62,11 @@ app.get('/api/health', (req, res) => {
 io.on('connection', (socket) => {
   console.log(`Client connected: ${socket.id}`);
 
-  socket.on('join-session', (sessionId) => {
+  socket.on('join-session', (data) => {
+    const sessionId = typeof data === 'string' ? data : data.sessionId;
+    const role = typeof data === 'object' ? data.role : 'candidate';
     socket.join(sessionId);
-    console.log(`Client ${socket.id} joined session ${sessionId}`);
+    console.log(`${role} joined session ${sessionId}`);
   });
 
   socket.on('proctoring-event', (data) => {
@@ -81,8 +83,9 @@ io.on('connection', (socket) => {
     console.log(`Proctoring event in session ${sessionId}:`, eventType);
   });
 
-  socket.on('disconnect', () => {
-    console.log(`Client disconnected: ${socket.id}`);
+  // Handle session end notification
+  socket.on('session-ended', (data) => {
+    socket.to(data.sessionId).emit('session-ended');
   });
 });
 
