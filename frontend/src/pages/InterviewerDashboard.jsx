@@ -50,7 +50,7 @@ const InterviewerDashboard = () => {
 
   const setupWebSocket = () => {
     try {
-      socketRef.current = new WebSocket('ws://video-proctoring-system-52ph.onrender.com');
+      socketRef.current = new WebSocket('wss://video-proctoring-system-52ph.onrender.com');
       
       socketRef.current.onopen = () => {
         setIsConnected(true);
